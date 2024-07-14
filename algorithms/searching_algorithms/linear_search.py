@@ -1,8 +1,3 @@
-# Linear search is a simple search algorithm that
-# sequentially checks each element in a list until a match is found or the entire list has been searched.
-
-# The time complexity of the linear search algorithm is O(n)
-
 def linear_search(arr: list[int], target: int) -> int:
     for i in range(len(arr)):
         if arr[i] == target:
