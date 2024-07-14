@@ -10,10 +10,9 @@ def bubble_sort(arr: list[int]):
                 swapped = True
         if not swapped:
             break
-    return arr
 
 
 if __name__ == '__main__':
     arr = [475, 149, 560, 379, 300, 339, 692, 291, 307, 283]
-    sorted_arr = bubble_sort(arr)
-    print(sorted_arr)
+    bubble_sort(arr)
+    print(arr)

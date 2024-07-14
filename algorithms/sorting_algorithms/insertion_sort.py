@@ -7,10 +7,9 @@ def insertion_sort(arr: list[int]):
             arr[j + 1] = arr[j]
             j -= 1
         arr[j + 1] = key
-    return arr
 
 
 if __name__ == '__main__':
     arr = [401, 322, 207, 107, 139, 723, 739, 252, 259, 330]
-    sorted_arr = insertion_sort(arr)
-    print(sorted_arr)
+    insertion_sort(arr)
+    print(arr)
