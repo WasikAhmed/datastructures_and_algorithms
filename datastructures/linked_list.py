@@ -30,7 +30,16 @@ class LinkedList:
         pass
 
     def delete(self, data):
-        pass
+        current_node = self.head
+
+        if current_node.data == data:
+            self.head = current_node.next
+            return
+
+        while current_node.next:
+            if current_node.next.data == data:
+                current_node.next = current_node.next.next
+            current_node = current_node.next
 
     def get_all_data(self):
         data = []
@@ -56,3 +65,5 @@ if __name__ == "__main__":
     ll.append("C")
     ll.print_list()
     print(ll.get_all_data())
+    ll.delete('A')
+    ll.print_list()
