@@ -3,17 +3,19 @@
 # assuming that a person can only work on a single activity at a time.
 
 def max_activities(start: list[int], finish: list[int]):
+    activities = sorted(zip(start, finish), key=lambda x: x[1])
     selected_activities = []
 
-    n = len(finish)
-    i = 0
-    selected_activities.append(i)
+    last_finish_time = activities[0][1]
+    selected_activities.append(0)
 
-    for j in range(1, n):
-        if start[j] >= finish[i]:
-            selected_activities.append(j)
-            i = j
-    return selected_activities
+    for i in range(1, len(activities)):
+        if activities[i][0] >= last_finish_time:
+            selected_activities.append(i)
+            last_finish_time = activities[i][1]
+
+    original_indices = [start.index(activities[i][0]) for i in selected_activities]
+    return original_indices
 
 
 if __name__ == '__main__':
